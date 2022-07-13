@@ -1,0 +1,31 @@
+<div>
+    <div>Movie List:</div>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Debut</th>
+        <th>Genre</th>
+        <th>Rating</th>
+        <th>Director</th>
+      </tr>
+
+  
+     <div *ngFor="let movie of movies">
+        <tr>
+          <td><a href="movies/{{movie.id}}">{{movie.id}}</a></td>
+          <td>{{movie.title}}</td>
+          <td>{{movie.debut}}</td>
+          <td>{{movie.genre}}</td>
+          <td>{{movie.rating}}</td>
+          <td>{{movie.director}}</td>
+          <td><button type="button" (click)="deleteMovie(movie.id)" >DELETE</button>
+            <button type="button" (click)="updateMovie(movie)" >UPDATE</button></td>
+        </tr>
+      </div>
+   
+    </table>
+    <div><a routerLink="/create" >CREATE</a></div>
+    <div>{{this.msg}}</div>
+  </div>
+  
